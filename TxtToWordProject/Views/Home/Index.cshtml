@@ -1,0 +1,32 @@
+﻿@model TxtToWordProject.Models.MainModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Top 10 Max Words</h1>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Word</th>
+                    <th scope="col">Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int temp = 1; }
+                @foreach (var xml in Model.lstXml)
+                {
+                    <tr>
+                        <th scope="row">@temp</th>
+                        <td>@xml.Text</td>
+                        <td>@xml.Count</td>
+                    </tr>
+                    temp++;
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
